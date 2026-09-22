@@ -4,11 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Minimal Store</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
-
     <script>
         tailwind.config = {
             darkMode: "class"
@@ -21,1147 +19,296 @@
 </head>
 
 <body id="body" class="bg-black font-[Inter]">
+    <div class="px-4 sm:px-8 md:px-[120px] py-10">
 
-    <div class="px-4 sm:px-8 lg:px-[120px] py-10">
-
-        <header id="header" class="bg-white dark:bg-[#111111] flex p-5 rounded-t-lg">
-
+        <header id="header" class="bg-white dark:bg-[#111111] flex p-5 rounded-t-lg transition-colors">
             <div class="flex items-center gap-2">
-
-                <div
-                    class="w-6 h-6 flex items-center justify-center rounded font-bold bg-black text-white dark:bg-white dark:text-black">
+                <div class="w-6 h-6 flex items-center justify-center rounded font-bold bg-black text-white dark:bg-white dark:text-black transition-colors">
                     M
                 </div>
-
-                <div class="mx-1 text-black dark:text-white">
+                <div class="mx-1 text-black dark:text-white transition-colors">
                     Minimal Store
                 </div>
-
             </div>
 
+            <!-- Ajustei o 'pr-23' para 'px-3' para o botão ficar com o padding correto -->
             <button
                 id="themeBtn"
-                class="text-[10px] text-[#4B5563] dark:text-gray-300 font-medium ml-auto rounded-full pr-23 pl-2 pt-1.5 pb-1.5 bg-[#F3F4F6] dark:bg-[#1A1A1A] border border-[#E5E7EB] dark:border-[#2A2A2A]">
+                class="text-[10px] text-[#4B5563] dark:text-gray-300 font-medium ml-auto rounded-full px-3 py-1.5 bg-[#F3F4F6] dark:bg-[#1A1A1A] border border-[#E5E7EB] dark:border-[#2A2A2A] hover:bg-gray-200 dark:hover:bg-gray-800 transition-all cursor-pointer">
                 Dark mode
             </button>
-
         </header>
 
-       <main
-    id="main"
-    class="
-        bg-[#F3F4F6] dark:bg-[#090909]
-        w-full
-        p-5
-        grid
-        grid-cols-[minmax(0,1fr)_360px]
-        gap-6
-        items-start
-    "
->
-            <!-- ESQUERDA -->
+        <main id="main" class="bg-[#F3F4F6] dark:bg-[#090909] w-full p-5 grid grid-cols-[minmax(0,1fr)_360px] max-[700px]:grid-cols-1 gap-6 items-start transition-colors">
+            
             <!-- COLUNA ESQUERDA -->
-             <div class="min-w-0 space-y-5">
+            <div class="min-w-0 space-y-5 col-start-1 row-start-1 max-[700px]:col-start-1 max-[700px]:row-start-auto">
 
                 <!-- Dados Pessoais -->
                 <div class="flex items-center gap-2 mb-4">
-
-                    <div
-                        class="w-5 h-5 rounded-full bg-gray-100 dark:bg-[#1A1A1A] text-[11px] flex items-center justify-center text-black dark:text-white">
+                    <div class="w-5 h-5 rounded-full bg-gray-100 dark:bg-[#1A1A1A] text-[11px] flex items-center justify-center text-black dark:text-white transition-colors">
                         1
                     </div>
-
-                    <h2 class="font-semibold text-sm text-black dark:text-white">
+                    <h2 class="font-semibold text-sm text-black dark:text-white transition-colors">
                         Dados Pessoais
                     </h2>
-
                 </div>
 
-                <div
-                    class="bg-white dark:bg-[#111111] rounded-xl border border-gray-200 dark:border-[#242424] p-4">
-
+                <div class="bg-white dark:bg-[#111111] rounded-xl border border-gray-200 dark:border-[#242424] p-4 transition-colors">
                     <div class="space-y-3">
-
                         <!-- Email -->
                         <div>
-
                             <label class="text-[11px] text-[#6B7280] dark:text-gray-400">
                                 E-mail para confirmação
                             </label>
-
                             <div class="relative mt-1">
-
                                 <div class="absolute left-3 top-1/2 -translate-y-1/2">
-
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <path
-                                            d="M2 5.33325L7.26 8.83992C7.47911 8.9861 7.7366 9.06412 8 9.06412C8.2634 9.06412 8.52089 8.9861 8.74 8.83992L14 5.33325M3.33333 12.6666H12.6667C13.0203 12.6666 13.3594 12.5261 13.6095 12.2761C13.8595 12.026 14 11.6869 14 11.3333V4.66659C14 4.31296 13.8594 3.97382 13.6095 3.72378C13.3594 3.47373 13.0203 3.33325 12.6667 3.33325H3.33333C2.97971 3.33325 2.64057 3.47373 2.39052 3.72378C2.14048 3.97373 2 4.31296 2 4.66659V11.3333C2 11.6869 2.14048 12.026 2.39052 12.2761C2.64057 12.5261 2.97971 12.6666 3.33333 12.6666Z"
-                                            stroke="#6B7280" stroke-width="1.33333" stroke-linecap="round"
-                                            stroke-linejoin="round" />
+                                        <path d="M2 5.33325L7.26 8.83992C7.47911 8.9861 7.7366 9.06412 8 9.06412C8.2634 9.06412 8.52089 8.9861 8.74 8.83992L14 5.33325M3.33333 12.6666H12.6667C13.0203 12.6666 13.3594 12.5261 13.6095 12.2761C13.8595 12.026 14 11.6869 14 11.3333V4.66659C14 4.31296 13.8594 3.97382 13.6095 3.72378C13.3594 3.47373 13.0203 3.33325 12.6667 3.33325H3.33333C2.97971 3.33325 2.64057 3.47373 2.39052 3.72378C2.14048 3.97373 2 4.31296 2 4.66659V11.3333C2 11.6869 2.14048 12.026 2.39052 12.2761C2.64057 12.5261 2.97971 12.6666 3.33333 12.6666Z" stroke="#6B7280" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-
                                 </div>
-
-                                <input
-                                    class="w-full border border-[#E5E7EB] dark:border-[#2A2A2A] bg-white dark:bg-[#151515] text-black dark:text-white rounded-lg p-2 pl-9 text-xs"
-                                    value="lucas.silva@exemplo.com.br">
-
+                                <input class="w-full border border-[#E5E7EB] dark:border-[#2A2A2A] bg-white dark:bg-[#151515] text-black dark:text-white rounded-lg p-2 pl-9 text-xs transition-colors" value="lucas.silva@exemplo.com.br">
                             </div>
-
                         </div>
 
                         <div class="grid grid-cols-2 gap-3">
-
                             <div>
-
-                                <label class="text-[11px] text-gray-500 dark:text-gray-400">
-                                    Nome Completo
-                                </label>
-
-                                <input
-                                    class="w-full border border-[#E5E7EB] dark:border-[#2A2A2A] bg-white dark:bg-[#151515] text-black dark:text-white rounded-lg p-2 text-xs mt-1"
-                                    value="Lucas Silva">
-
+                                <label class="text-[11px] text-gray-500 dark:text-gray-400">Nome Completo</label>
+                                <input class="w-full border border-[#E5E7EB] dark:border-[#2A2A2A] bg-white dark:bg-[#151515] text-black dark:text-white rounded-lg p-2 text-xs mt-1 transition-colors" value="Lucas Silva">
                             </div>
-
                             <div>
-
-                                <label class="text-[11px] text-gray-500 dark:text-gray-400">
-                                    CPF
-                                </label>
-
-                                <input
-                                    class="w-full border border-[#E5E7EB] dark:border-[#2A2A2A] bg-white dark:bg-[#151515] text-black dark:text-white rounded-lg p-2 text-xs mt-1"
-                                    value="342.890.128-40">
-
+                                <label class="text-[11px] text-gray-500 dark:text-gray-400">CPF</label>
+                                <input class="w-full border border-[#E5E7EB] dark:border-[#2A2A2A] bg-white dark:bg-[#151515] text-black dark:text-white rounded-lg p-2 text-xs mt-1 transition-colors" value="342.890.128-40">
                             </div>
-
                         </div>
 
                         <div>
-
-                            <label class="text-[11px] text-gray-500 dark:text-gray-400">
-                                Telefone / WhatsApp
-                            </label>
-
-                            <input
-                                class="w-full border border-[#E5E7EB] dark:border-[#2A2A2A] bg-white dark:bg-[#151515] text-black dark:text-white rounded-lg p-2 text-xs mt-1"
-                                value="(11) 98765-4321">
-
+                            <label class="text-[11px] text-gray-500 dark:text-gray-400">Telefone / WhatsApp</label>
+                            <input class="w-full border border-[#E5E7EB] dark:border-[#2A2A2A] bg-white dark:bg-[#151515] text-black dark:text-white rounded-lg p-2 text-xs mt-1 transition-colors" value="(11) 98765-4321">
                         </div>
-
                     </div>
-
                 </div>
 
                 <!-- Endereço -->
                 <div class="flex items-center gap-2 mb-4">
-
-                    <div
-                        class="w-5 h-5 rounded-full bg-gray-100 dark:bg-[#1A1A1A] text-[11px] flex items-center justify-center text-black dark:text-white">
+                    <div class="w-5 h-5 rounded-full bg-gray-100 dark:bg-[#1A1A1A] text-[11px] flex items-center justify-center text-black dark:text-white transition-colors">
                         2
                     </div>
-
-                    <h2 class="font-semibold text-sm text-black dark:text-white">
+                    <h2 class="font-semibold text-sm text-black dark:text-white transition-colors">
                         Endereço de Entrega
                     </h2>
-
                 </div>
 
-                <div
-                    class="bg-white dark:bg-[#111111] rounded-xl border border-gray-200 dark:border-[#242424] p-4">
-
+                <div class="bg-white dark:bg-[#111111] rounded-xl border border-gray-200 dark:border-[#242424] p-4 transition-colors">
                     <div class="space-y-3">
-
                         <div class="grid grid-cols-2 gap-3">
-
                             <div>
-
-                                <label class="text-[11px] text-gray-500 dark:text-gray-400">
-                                    CEP
-                                </label>
-
-                                <input
-                                    class="w-full border border-[#E5E7EB] dark:border-[#2A2A2A] bg-white dark:bg-[#151515] text-black dark:text-white rounded-lg p-2 text-xs mt-1"
-                                    value="01310-100">
-
+                                <label class="text-[11px] text-gray-500 dark:text-gray-400">CEP</label>
+                                <input class="w-full border border-[#E5E7EB] dark:border-[#2A2A2A] bg-white dark:bg-[#151515] text-black dark:text-white rounded-lg p-2 text-xs mt-1 transition-colors" value="01310-100">
                             </div>
-
                             <div>
-
-                                <label class="text-[11px] text-gray-500 dark:text-gray-400">
-                                    Cidade / UF
-                                </label>
-
-                                <input
-                                    class="w-full border border-[#E5E7EB] dark:border-[#2A2A2A] bg-white dark:bg-[#151515] text-black dark:text-white rounded-lg p-2 text-xs mt-1"
-                                    value="São Paulo - SP">
-
+                                <label class="text-[11px] text-gray-500 dark:text-gray-400">Cidade / UF</label>
+                                <input class="w-full border border-[#E5E7EB] dark:border-[#2A2A2A] bg-white dark:bg-[#151515] text-black dark:text-white rounded-lg p-2 text-xs mt-1 transition-colors" value="São Paulo - SP">
                             </div>
-
                         </div>
 
                         <div class="grid grid-cols-[2fr_1fr] gap-3">
-
                             <div>
-
-                                <label class="text-[11px] text-gray-500 dark:text-gray-400">
-                                    Logradouro / Avenida
-                                </label>
-
-                                <input
-                                    class="w-full border border-[#E5E7EB] dark:border-[#2A2A2A] bg-white dark:bg-[#151515] text-black dark:text-white rounded-lg p-2 text-xs mt-1"
-                                    value="Av. Paulista">
-
+                                <label class="text-[11px] text-gray-500 dark:text-gray-400">Logradouro / Avenida</label>
+                                <input class="w-full border border-[#E5E7EB] dark:border-[#2A2A2A] bg-white dark:bg-[#151515] text-black dark:text-white rounded-lg p-2 text-xs mt-1 transition-colors" value="Av. Paulista">
                             </div>
-
                             <div>
-
-                                <label class="text-[11px] text-gray-500 dark:text-gray-400">
-                                    Número
-                                </label>
-
-                                <input
-                                    class="w-full border border-[#E5E7EB] dark:border-[#2A2A2A] bg-white dark:bg-[#151515] text-black dark:text-white rounded-lg p-2 text-xs mt-1"
-                                    value="1578">
-
+                                <label class="text-[11px] text-gray-500 dark:text-gray-400">Número</label>
+                                <input class="w-full border border-[#E5E7EB] dark:border-[#2A2A2A] bg-white dark:bg-[#151515] text-black dark:text-white rounded-lg p-2 text-xs mt-1 transition-colors" value="1578">
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
 
                 <!-- Forma de Pagamento -->
-               <!-- =========================================================
-     FORMA DE PAGAMENTO
-     ========================================================= -->
-
-     
-
-<div class="flex  gap-2 mb-4">
-
-    <div
-        class="w-5 h-5 rounded-full
-               bg-gray-100 dark:bg-[#1A1A1A]
-               text-[11px]
-               flex items-center justify-center
-               text-black dark:text-white">
-
-        3
-
-    </div>
-
-    <h2 class="font-semibold text-sm text-black dark:text-white">
-        Forma de Pagamento
-    </h2>
-
-</div>
-
-
-<div
-    class="bg-white dark:bg-[#111111]
-           rounded-xl
-           border border-gray-200 dark:border-[#242424]
-           p-4">
-
-
-    <!-- =====================================================
-         BOTÕES DE PAGAMENTO
-         ===================================================== -->
-
-    <div class="grid grid-cols-3 gap-2 mb-5 text-[10px]">
-
-
-        <!-- =================================================
-             CARTÃO
-             ================================================= -->
-
-        <button
-            type="button"
-            class="
-                h-12
-                border
-                border-[#111827]
-                dark:border-[#2A2A2A]
-                rounded-md
-                flex flex-col
-                items-center
-                justify-center
-                gap-1
-                bg-white
-                dark:bg-[#151515]
-                text-black
-                dark:text-gray-400
-            ">
-
-            <svg
-                width="17"
-                height="14"
-                viewBox="0 0 17 14"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-
-                <path
-                    d="M0.833374 4.99992H15.8334M4.16671 9.16659H5.00004M8.33337 9.16659H9.16671M3.33337 12.4999H13.3334C13.9964 12.4999 14.6323 12.2365 15.1011 11.7677C15.57 11.2988 15.8334 10.663 15.8334 9.99992V3.33325C15.8334 2.67021 15.57 2.03433 15.1011 1.56549C14.6323 1.09664 13.9964 0.833252 13.3334 0.833252H3.33337C2.67033 0.833252 2.03445 1.09664 1.56561 1.56549C1.09677 2.03433 0.833374 2.67021 0.833374 3.33325V9.99992C0.833374 10.663 1.09677 11.2988 1.56561 11.7677C2.03445 12.2365 2.67033 12.4999 3.33337 12.4999Z"
-                    stroke="#A1A1AA"
-                    stroke-width="1.66667"
-                    stroke-linecap="round"
-                    stroke-linejoin="round" />
-
-            </svg>
-
-            <span>
-                Cartão
-            </span>
-
-        </button>
-
-
-        <!-- =================================================
-             PIX
-             ================================================= -->
-
-        <button
-            type="button"
-            class="
-                h-12
-                border
-                border-[#E5E7EB]
-                dark:border-2
-                dark:border-white
-                rounded-md
-                flex flex-col
-                items-center
-                justify-center
-                gap-1
-                bg-[#F9FAFB]
-                dark:bg-[#1A1A1A]
-                text-black
-                dark:text-white
-                relative
-            ">
-
-            <span
-                class="
-                    absolute
-                    -top-1
-                    right-2
-                    bg-[#10B981]
-                    text-white
-                    text-[7px]
-                    px-1.5
-                    py-0.5
-                    rounded-full
-                ">
-
-                -5% OFF
-
-            </span>
-
-
-            <svg
-                width="17"
-                height="16"
-                viewBox="0 0 17 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-
-                <path
-                    d="M10.1676 0.942613C9.8689 0.643776 9.51424 0.406718 9.12389 0.244982C8.73354 0.0832458 8.31514 0 7.89261 0C7.47008 0 7.05169 0.0832458 6.66134 0.244982C6.27099 0.406718 5.91633 0.643776 5.61761 0.942613L0.942613 5.61761C0.643776 5.91633 0.406719 6.27099 0.244982 6.66134C0.0832459 7.05169 0 7.47008 0.244982 9.12389C0.406719 9.51424 0.643776 9.8689 0.942613 10.1676L5.61761 14.8426C5.91633 15.1414 6.27099 15.3785 6.66134 15.5402C7.05169 15.702 7.47008 15.7852 7.89261 15.7852C8.31514 15.7852 8.73354 15.702 9.12389 15.5402C9.51424 15.3785 9.8689 15.1414 10.1676 14.8426L14.8426 10.1676C15.1414 9.8689 15.3785 9.51424 15.1414 9.12389C15.702 8.73354 15.7852 8.31514 15.7852 7.89261C15.7852 7.47008 15.702 7.05169 15.5402 6.66134C15.3785 6.27099 15.1414 5.91633 14.8426 5.61761L10.1676 0.942613ZM9.27595 1.83428L12.0426 1.83428C12.4097 1.46789 12.9072 1.26211 13.4259 1.26211C13.9446 1.26211 14.4421 1.46789 14.8093 1.83428L15.8259 5.61761C16.1923 5.98476 16.3981 6.48226 16.3981 7.00095C16.3981 7.51963 16.1923 8.01714 15.8259 8.38428L12.0426 12.1676C11.6755 12.534 11.178 12.7398 10.6593 12.7398C10.1406 12.7398 9.64309 12.534 9.27595 12.1676L5.49261 8.38428C5.12622 8.01714 4.92045 7.51963 4.92045 7.00095C4.92045 6.48226 5.12622 5.98476 5.61761 5.61761L9.27595 1.83428Z"
-                    fill="white"
-                    class="dark:fill-white fill-[#6B7280]" />
-
-            </svg>
-
-            <span>
-                PIX
-            </span>
-
-        </button>
-
-
-        <!-- =================================================
-             BOLETO
-             ================================================= -->
-
-        <button
-            type="button"
-            class="
-                h-12
-                border
-                border-[#E5E7EB]
-                dark:border-[#2A2A2A]
-                rounded-md
-                flex flex-col
-                items-center
-                justify-center
-                gap-1
-                bg-[#F9FAFB]
-                dark:bg-[#151515]
-                text-black
-                dark:text-gray-400
-            ">
-
-            <svg
-                width="14"
-                height="17"
-                viewBox="0 0 14 17"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-
-                <path
-                    d="M4.16671 12.4999V10.8333M6.66671 12.4999V9.16659M9.16671 12.4999V7.49992M10.8334 15.8333H2.50004C2.05801 15.8333 1.63409 15.6577 1.32153 15.3451C1.00897 15.0325 0.833374 14.6086 0.833374 14.1666V2.49992C0.833374 2.05789 1.00897 1.63397 1.32153 1.32141C1.63409 1.00885 2.05801 0.833252 2.50004 0.833252H7.15504C7.37604 0.833299 7.58796 0.921127 7.74421 1.07742L12.2559 5.58908C12.4122 5.74533 12.5 5.95726 12.5 6.17825V14.1666C12.5 14.6086 12.3244 15.0325 12.0119 15.3451C11.6993 15.6577 11.2754 15.8333 10.8334 15.8333Z"
-                    stroke="#A1A1AA"
-                    stroke-width="1.66667"
-                    stroke-linecap="round"
-                    stroke-linejoin="round" />
-
-            </svg>
-
-            <span>
-                Boleto
-            </span>
-
-        </button>
-
-    </div>
-
-
-    <!-- =====================================================
-         LIGHT MODE — CARTÃO
-         ===================================================== -->
-
-    <div class="block dark:hidden">
-
-        <div class="space-y-3">
-
-
-            <!-- NÚMERO DO CARTÃO -->
-
-            <div>
-
-                <label
-                    class="block text-[8px] font-semibold text-[#111827] mb-1">
-
-                    Número do Cartão
-
-                </label>
-
-                <div class="relative">
-
-                    <input
-                        type="text"
-                        value="4532 •••• •••• 8910"
-                        class="
-                            w-full
-                            h-9
-                            border border-[#D1D5DB]
-                            rounded-md
-                            px-2
-                            text-[9px]
-                            text-[#111827]
-                            outline-none
-                            bg-white
-                        ">
-
-                    <span
-                        class="
-                            absolute
-                            right-2
-                            top-1/2
-                            -translate-y-1/2
-                            text-[10px]
-                        ">
-
-                        💳
-
-                    </span>
-
+                <div class="flex gap-2 mb-4">
+                    <div class="w-5 h-5 rounded-full bg-gray-100 dark:bg-[#1A1A1A] text-[11px] flex items-center justify-center text-black dark:text-white transition-colors">
+                        3
+                    </div>
+                    <h2 class="font-semibold text-sm text-black dark:text-white transition-colors">
+                        Forma de Pagamento
+                    </h2>
                 </div>
 
-            </div>
+                <div class="bg-white dark:bg-[#111111] rounded-xl border border-gray-200 dark:border-[#242424] p-4 transition-colors">
+                    
+                    <div class="grid grid-cols-3 gap-2 mb-5 text-[10px]">
+                        <!-- Cartão -->
+                        <button type="button" class="h-12 border border-[#111827] dark:border-[#2A2A2A] rounded-md flex flex-col items-center justify-center gap-1 bg-white dark:bg-[#151515] text-black dark:text-gray-400 transition-colors">
+                            <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.833374 4.99992H15.8334M4.16671 9.16659H5.00004M8.33337 9.16659H9.16671M3.33337 12.4999H13.3334C13.9964 12.4999 14.6323 12.2365 15.1011 11.7677C15.57 11.2988 15.8334 10.663 15.8334 9.99992V3.33325C15.8334 2.67021 15.57 2.03433 15.1011 1.56549C14.6323 1.09664 13.9964 0.833252 13.3334 0.833252H3.33337C2.67033 0.833252 2.03445 1.09664 1.56561 1.56549C1.09677 2.03433 0.833374 2.67021 0.833374 3.33325V9.99992C0.833374 10.663 1.09677 11.2988 1.56561 11.7677C2.03445 12.2365 2.67033 12.4999 3.33337 12.4999Z" stroke="#A1A1AA" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span>Cartão</span>
+                        </button>
 
+                        <!-- PIX -->
+                        <button type="button" class="h-12 border border-[#E5E7EB] dark:border-2 dark:border-white rounded-md flex flex-col items-center justify-center gap-1 bg-[#F9FAFB] dark:bg-[#1A1A1A] text-black dark:text-white relative transition-colors">
+                            <span class="absolute -top-1 right-2 bg-[#10B981] text-white text-[7px] px-1.5 py-0.5 rounded-full">
+                                -5% OFF
+                            </span>
+                            <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.1676 0.942613C9.8689 0.643776 9.51424 0.406718 9.12389 0.244982C8.73354 0.0832458 8.31514 0 7.89261 0C7.47008 0 7.05169 0.0832458 6.66134 0.244982C6.27099 0.406718 5.91633 0.643776 5.61761 0.942613L0.942613 5.61761C0.643776 5.91633 0.406719 6.27099 0.244982 6.66134C0.0832459 7.05169 0 7.47008 0.244982 9.12389C0.406719 9.51424 0.643776 9.8689 0.942613 10.1676L5.61761 14.8426C5.91633 15.1414 6.27099 15.3785 6.66134 15.5402C7.05169 15.702 7.47008 15.7852 7.89261 15.7852C8.31514 15.7852 8.73354 15.702 9.12389 15.5402C9.51424 15.3785 9.8689 15.1414 10.1676 14.8426L14.8426 10.1676C15.1414 9.8689 15.3785 9.51424 15.1414 9.12389C15.702 8.73354 15.7852 8.31514 15.7852 7.89261C15.7852 7.47008 15.702 7.05169 15.5402 6.66134C15.3785 6.27099 15.1414 5.91633 14.8426 5.61761L10.1676 0.942613ZM9.27595 1.83428L12.0426 1.83428C12.4097 1.46789 12.9072 1.26211 13.4259 1.26211C13.9446 1.26211 14.4421 1.46789 14.8093 1.83428L15.8259 5.61761C16.1923 5.98476 16.3981 6.48226 16.3981 7.00095C16.3981 7.51963 16.1923 8.01714 15.8259 8.38428L12.0426 12.1676C11.6755 12.534 11.178 12.7398 10.6593 12.7398C10.1406 12.7398 9.64309 12.534 9.27595 12.1676L5.49261 8.38428C5.12622 8.01714 4.92045 7.51963 4.92045 7.00095C4.92045 6.48226 5.12622 5.98476 5.61761 5.61761L9.27595 1.83428Z" fill="white" class="dark:fill-white fill-[#6B7280]" />
+                            </svg>
+                            <span>PIX</span>
+                        </button>
 
-            <!-- NOME -->
+                        <!-- Boleto -->
+                        <button type="button" class="h-12 border border-[#E5E7EB] dark:border-[#2A2A2A] rounded-md flex flex-col items-center justify-center gap-1 bg-[#F9FAFB] dark:bg-[#151515] text-black dark:text-gray-400 transition-colors">
+                            <svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.16671 12.4999V10.8333M6.66671 12.4999V9.16659M9.16671 12.4999V7.49992M10.8334 15.8333H2.50004C2.05801 15.8333 1.63409 15.6577 1.32153 15.3451C1.00897 15.0325 0.833374 14.6086 0.833374 14.1666V2.49992C0.833374 2.05789 1.00897 1.63397 1.32153 1.32141C1.63409 1.00885 2.05801 0.833252 2.50004 0.833252H7.15504C7.37604 0.833299 7.58796 0.921127 7.74421 1.07742L12.2559 5.58908C12.4122 5.74533 12.5 5.95726 12.5 6.17825V14.1666C12.5 14.6086 12.3244 15.0325 12.0119 15.3451C11.6993 15.6577 11.2754 15.8333 10.8334 15.8333Z" stroke="#A1A1AA" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span>Boleto</span>
+                        </button>
+                    </div>
 
-            <div>
+                    <!-- LIGHT MODE — CARTÃO -->
+                    <div class="block dark:hidden">
+                        <div class="space-y-3">
+                            <div>
+                                <label class="block text-[8px] font-semibold text-[#111827] mb-1">Número do Cartão</label>
+                                <div class="relative">
+                                    <input type="text" value="4532 •••• •••• 8910" class="w-full h-9 border border-[#D1D5DB] rounded-md px-2 text-[9px] text-[#111827] outline-none bg-white">
+                                    <span class="absolute right-2 top-1/2 -translate-y-1/2 text-[10px]">💳</span>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-[8px] font-semibold text-[#111827] mb-1">Nome no Cartão</label>
+                                <input type="text" value="LUCAS SILVA" class="w-full h-9 border border-[#D1D5DB] rounded-md px-2 text-[9px] text-[#111827] outline-none bg-white">
+                            </div>
+                            <div class="grid grid-cols-2 gap-2">
+                                <div>
+                                    <label class="block text-[8px] font-semibold text-[#111827] mb-1">Validade</label>
+                                    <input type="text" value="08/29" class="w-full h-9 border border-[#D1D5DB] rounded-md px-2 text-[9px] text-[#111827] outline-none bg-white">
+                                </div>
+                                <div>
+                                    <label class="block text-[8px] font-semibold text-[#111827] mb-1">CVV</label>
+                                    <input type="text" value="849" class="w-full h-9 border border-[#D1D5DB] rounded-md px-2 text-[9px] text-[#111827] outline-none bg-white">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-[8px] font-semibold text-[#111827] mb-1">Parcelamento</label>
+                                <select class="w-full h-9 border border-[#D1D5DB] rounded-md px-2 text-[9px] text-[#111827] outline-none bg-white">
+                                    <option>3x de R$ 86,33 sem juros</option>
+                                    <option>2x de R$ 129,05 sem juros</option>
+                                    <option>1x de R$ 260,10</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
 
-                <label
-                    class="block text-[8px] font-semibold text-[#111827] mb-1">
-
-                    Nome no Cartão
-
-                </label>
-
-                <input
-                    type="text"
-                    value="LUCAS SILVA"
-                    class="
-                        w-full
-                        h-9
-                        border border-[#D1D5DB]
-                        rounded-md
-                        px-2
-                        text-[9px]
-                        text-[#111827]
-                        outline-none
-                        bg-white
-                    ">
-
-            </div>
-
-
-            <!-- VALIDADE + CVV -->
-
-            <div class="grid grid-cols-2 gap-2">
-
-                <div>
-
-                    <label
-                        class="block text-[8px] font-semibold text-[#111827] mb-1">
-
-                        Validade
-
-                    </label>
-
-                    <input
-                        type="text"
-                        value="08/29"
-                        class="
-                            w-full
-                            h-9
-                            border border-[#D1D5DB]
-                            rounded-md
-                            px-2
-                            text-[9px]
-                            text-[#111827]
-                            outline-none
-                            bg-white
-                        ">
-
+                    <!-- DARK MODE — PIX -->
+                    <div class="hidden dark:block">
+                        <div class="flex justify-center mb-4">
+                            <svg width="140" height="140" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0.5" y="0.5" width="139" height="139" rx="7.5" fill="white" />
+                                <rect x="0.5" y="0.5" width="139" height="139" rx="7.5" stroke="#E5E7EB" />
+                                <g clip-path="url(#clip0_1_998)">
+                                    <path d="M10.8 10.8H46.32V46.32H10.8V10.8ZM16.72 16.72V40.4H40.4V16.72H16.72ZM22.64 22.64H34.48V34.48H22.64V22.64ZM93.6801 10.8H129.2V46.32H93.6801V10.8ZM99.6001 16.72V40.4H123.28V16.72H99.6001ZM105.52 22.64H117.36V34.48H105.52V22.64ZM10.8 93.6801H46.32V129.2H10.8V93.6801ZM16.72 99.6001V123.28H40.4V99.6001H16.72ZM22.64 105.52H34.48V117.36H22.64V105.52ZM52.2401 22.64H64.08V34.48H52.2401V22.64ZM70 16.72H81.84V34.48H70V16.72ZM52.2401 52.2401H70V64.08H52.2401V52.2401ZM75.9201 52.2401H87.76V75.9201H75.9201V52.2401ZM99.6001 52.2401H111.44V64.08H99.6001V52.2401ZM111.44 64.08H129.2V81.84H111.44V64.08ZM52.2401 75.9201H64.08V87.76H52.2401V75.9201ZM22.64 70H40.4V81.84H22.64V70ZM52.2401 99.6001H64.08V129.2H52.2401V99.6001ZM75.9201 93.6801H93.6801V105.52H75.9201V93.6801ZM99.6001 99.6001H129.2V111.44H99.6001V99.6001ZM75.9201 111.44H93.6801V129.2H75.9201V111.44ZM111.44 117.36H129.2V129.2H111.44V117.36Z" fill="#09090B" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_1_998">
+                                        <rect width="118.4" height="120" fill="white" transform="translate(10.8 10)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="text-center mb-4">
+                            <p class="text-[10px] leading-4 text-gray-500 dark:text-gray-400">Escaneie o QR Code no app do banco ou copie a chave abaixo para aprovação instantânea.</p>
+                        </div>
+                        <div class="flex items-center gap-2 bg-[#F9FAFB] dark:bg-[#151515] border border-[#E5E7EB] dark:border-[#2A2A2A] rounded-md px-2 py-1">
+                            <input class="flex-1 bg-transparent text-[7px] text-gray-600 dark:text-gray-300 outline-none" value="00020126580014br.gov.bcb.pix01364a3f-43ba-4b29-92c1-minimalstore" readonly>
+                            <button type="button" class="bg-white text-black text-[9px] font-medium px-3 py-1 rounded">Copiar</button>
+                        </div>
+                    </div>
                 </div>
+            </div>
 
+            <!-- COLUNA DIREITA - RESUMO DA COMPRA -->
+            <aside class="w-full col-start-2 row-start-1 max-[700px]:col-start-1 max-[700px]:row-start-auto self-start">
+                <div id="resumoCompra" class="w-full bg-white dark:bg-[#111111] rounded-xl border border-gray-200 dark:border-[#242424] p-4 shadow-sm transition-colors">
+                    
+                    <div class="flex justify-between items-center mb-5">
+                        <h2 class="font-semibold text-sm text-black dark:text-white transition-colors">Resumo da Compra</h2>
+                        <span class="text-[11px] text-gray-400 dark:text-gray-500 transition-colors">1 item</span>
+                    </div>
 
-                <div>
+                    <div class="flex gap-3 pb-4 border-b border-gray-200 dark:border-[#242424] transition-colors">
+                        <div class="w-12 h-12 flex -shrink-0 items-center justify-center bg-gray-100 dark:bg-[#1A1A1A] rounded-lg transition-colors">
+                            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 22.3333V5L25 1V18.3333M9 22.3333C9 23.8067 7.20933 25 5 25C2.79067 25 1 23.8067 1 22.3333C1 20.86 2.79067 19.6667 5 19.6667C7.20933 19.6667 9 20.86 9 22.3333ZM25 18.3333C25 19.8067 23.2093 21 21 21C18.7907 21 17 19.8067 17 18.3333C17 16.86 18.7907 15.6667 21 15.6667C23.2093 15.6667 25 16.86 25 18.3333ZM9 10.3333L25 6.33333" stroke="#A1A1AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="min-w-0">
+                            <p class="font-semibold text-sm text-black dark:text-white truncate transition-colors">Headphone Wireless ANC</p>
+                            <p class="text-[10px] text-gray-500 dark:text-gray-400 mt-0.5 transition-colors">Edição Minimalista • Matte Black</p>
+                            <p class="font-bold text-sm mt-1 text-black dark:text-white transition-colors">R$ 289,00</p>
+                        </div>
+                    </div>
 
-                    <label
-                        class="block text-[8px] font-semibold text-[#111827] mb-1">
+                    <div class="flex gap-2 my-4">
+                        <input type="text" placeholder="CÓDIGO DE CUPOM" class="flex-1 min-w-0 border border-[#E5E7EB] dark:border-[#2A2A2A] bg-white dark:bg-[#151515] text-black dark:text-white placeholder:text-gray-400 rounded-lg px-3 py-2 text-[10px] outline-none focus:border-gray-400 dark:focus:border-gray-500 transition-colors">
+                        <button type="button" class="shrink-0 bg-gray-100 dark:bg-[#1A1A1A] border border-[#E5E7EB] dark:border-[#2A2A2A] rounded-lg px-3 text-[10px] text-black dark:text-white hover:bg-gray-200 dark:hover:bg-[#242424] transition-colors">Aplicar</button>
+                    </div>
 
-                        CVV
+                    <div class="space-y-3 text-[10px] text-gray-500 dark:text-gray-400 transition-colors">
+                        <div class="flex justify-between">
+                            <span>Subtotal</span>
+                            <span class="text-gray-700 dark:text-gray-300">R$ 289,00</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Frete Sedex</span>
+                            <span class="text-green-600 dark:text-green-400">Grátis</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Desconto PIX (5% OFF)</span>
+                            <span class="text-green-600 dark:text-green-400">- R$ 14,45</span>
+                        </div>
+                    </div>
 
-                    </label>
+                    <div class="border-t border-gray-200 dark:border-[#242424] mt-5 pt-4 flex justify-between items-center transition-colors">
+                        <div>
+                            <p class="font-semibold text-sm text-black dark:text-white transition-colors">Total</p>
+                            <p class="text-[9px] text-gray-400 dark:text-gray-500 transition-colors">em até 3x de R$ 86,70 sem juros</p>
+                        </div>
+                        <span class="text-xl font-bold text-[#111827] dark:text-white transition-colors">R$ 260,10</span>
+                    </div>
 
-                    <input
-                        type="text"
-                        value="849"
-                        class="
-                            w-full
-                            h-9
-                            border border-[#D1D5DB]
-                            rounded-md
-                            px-2
-                            text-[9px]
-                            text-[#111827]
-                            outline-none
-                            bg-white
-                        ">
+                    <button type="button" class="w-full bg-[#111827] dark:bg-white text-white dark:text-black rounded-lg py-3 mt-5 text-[10px] font-semibold flex items-center justify-center gap-2 shadow-md hover:opacity-90 transition-all">
+                        <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.00008 8.66675V10.0001M2.00008 12.6667H10.0001C10.3537 12.6667 10.6928 12.5263 10.9429 12.2762C10.9429 12.0262 11.3334 11.687 11.3334 11.3334V7.33341C11.3334 6.97979 11.1929 6.64065 11.0573 6.39061C10.8072 6.14056 10.3537 6.00008 10.0001 6.00008H2.00008C1.64646 6.00008 1.30732 6.14056 1.05727 6.39061C0.807224 6.14056 0.666748 6.97979 0.666748 7.33341V11.3334C0.666748 11.687 0.807224 12.0262 1.05727 12.2762C1.30732 12.5263 1.64646 12.6667 2.00008 12.6667ZM8.66675 6.00008V3.33341C8.66675 2.62617 8.3858 1.94789 7.8857 1.4478C7.3856 0.9477 6.70733 0.666748 6.00008 0.666748C5.29284 0.666748 4.61456 0.9477 4.11446 1.4478C3.61437 1.94789 3.33341 2.62617 3.33341 3.33341V6.00008H8.66675Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <span>Finalizar Pedido • R$ 260,10</span>
+                    </button>
 
+                    <div class="mt-4 space-y-2 text-[9px] text-[#6B7280] dark:text-gray-400 transition-colors">
+                        <div class="flex items-center gap-2">
+                            <span class="text-green-400">✓</span>
+                            <span>30 dias de garantia incondicional</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-green-400">✓</span>
+                            <span>Envio imediato com código de rastreio</span>
+                        </div>
+                    </div>
                 </div>
-
-            </div>
-
-
-            <!-- PARCELAMENTO -->
-
-            <div>
-
-                <label
-                    class="block text-[8px] font-semibold text-[#111827] mb-1">
-
-                    Parcelamento
-
-                </label>
-
-                <select
-                    class="
-                        w-full
-                        h-9
-                        border border-[#D1D5DB]
-                        rounded-md
-                        px-2
-                        text-[9px]
-                        text-[#111827]
-                        outline-none
-                        bg-white
-                    ">
-
-                    <option>
-                        3x de R$ 86,33 sem juros
-                    </option>
-
-                    <option>
-                        2x de R$ 129,05 sem juros
-                    </option>
-
-                    <option>
-                        1x de R$ 260,10
-                    </option>
-
-                </select>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- =====================================================
-         DARK MODE — PIX
-         MANTIDO COMO ESTAVA
-         ===================================================== -->
-
-    <div class="hidden dark:block">
-
-        <!-- QR CODE -->
-
-        <div class="flex justify-center mb-4">
-
-            <svg
-                width="140"
-                height="140"
-                viewBox="0 0 140 140"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-
-                <rect
-                    x="0.5"
-                    y="0.5"
-                    width="139"
-                    height="139"
-                    rx="7.5"
-                    fill="white" />
-
-                <rect
-                    x="0.5"
-                    y="0.5"
-                    width="139"
-                    height="139"
-                    rx="7.5"
-                    stroke="#E5E7EB" />
-
-                <g clip-path="url(#clip0_1_998)">
-
-                    <path
-                        d="M10.8 10.8H46.32V46.32H10.8V10.8ZM16.72 16.72V40.4H40.4V16.72H16.72ZM22.64 22.64H34.48V34.48H22.64V22.64ZM93.6801 10.8H129.2V46.32H93.6801V10.8ZM99.6001 16.72V40.4H123.28V16.72H99.6001ZM105.52 22.64H117.36V34.48H105.52V22.64ZM10.8 93.6801H46.32V129.2H10.8V93.6801ZM16.72 99.6001V123.28H40.4V99.6001H16.72ZM22.64 105.52H34.48V117.36H22.64V105.52ZM52.2401 22.64H64.08V34.48H52.2401V22.64ZM70 16.72H81.84V34.48H70V16.72ZM52.2401 52.2401H70V64.08H52.2401V52.2401ZM75.9201 52.2401H87.76V75.9201H75.9201V52.2401ZM99.6001 52.2401H111.44V64.08H99.6001V52.2401ZM111.44 64.08H129.2V81.84H111.44V64.08ZM52.2401 75.9201H64.08V87.76H52.2401V75.9201ZM22.64 70H40.4V81.84H22.64V70ZM52.2401 99.6001H64.08V129.2H52.2401V99.6001ZM75.9201 93.6801H93.6801V105.52H75.9201V93.6801ZM99.6001 99.6001H129.2V111.44H99.6001V99.6001ZM75.9201 111.44H93.6801V129.2H75.9201V111.44ZM111.44 117.36H129.2V129.2H111.44V117.36Z"
-                        fill="#09090B" />
-
-                </g>
-
-                <defs>
-
-                    <clipPath id="clip0_1_998">
-                        <rect
-                            width="118.4"
-                            height="120"
-                            fill="white"
-                            transform="translate(10.8 10)" />
-                    </clipPath>
-
-                </defs>
-
-            </svg>
-
-        </div>
-
-
-        <!-- TEXTO PIX -->
-
-        <div class="text-center mb-4">
-
-            <p
-                class="
-                    text-[10px]
-                    leading-4
-                    text-gray-500
-                    dark:text-gray-400
-                ">
-
-                Escaneie o QR Code no app do banco ou copie a chave abaixo para aprovação instantânea.
-
-            </p>
-
-        </div>
-
-
-        <!-- CHAVE PIX -->
-
-        <div
-            class="
-                flex
-                items-center
-                gap-2
-                bg-[#F9FAFB]
-                dark:bg-[#151515]
-                border
-                border-[#E5E7EB]
-                dark:border-[#2A2A2A]
-                rounded-md
-                px-2
-                py-1
-            ">
-
-            <input
-                class="
-                    flex-1
-                    bg-transparent
-                    text-[7px]
-                    text-gray-600
-                    dark:text-gray-300
-                    outline-none
-                "
-                value="00020126580014br.gov.bcb.pix01364a3f-43ba-4b29-92c1-minimalstore"
-                readonly>
-
-
-            <button
-                type="button"
-                class="
-                    bg-white
-                    text-black
-                    text-[9px]
-                    font-medium
-                    px-3
-                    py-1
-                    rounded
-                ">
-
-                Copiar
-
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-
-            <!-- COLUNA DIREITA -->
-           <!-- RESUMO DA COMPRA -->
-<!-- =========================================================
-     COLUNA DIREITA - RESUMO DA COMPRA
-     ========================================================= -->
-
-<aside
-    class="
-        w-full
-        lg:w-[360px]
-        lg:col-start-2
-        lg:row-start-1
-        self-start
-    "
->
-
-    <div
-        id="resumoCompra"
-        class="
-            w-full
-            bg-white dark:bg-[#111111]
-            rounded-xl
-            border border-gray-200 dark:border-[#242424]
-            p-4
-            shadow-sm
-        "
-    >
-
-        <!-- TÍTULO -->
-        <div class="flex justify-between items-center mb-5">
-
-            <h2 class="font-semibold text-sm text-black dark:text-white">
-                Resumo da Compra
-            </h2>
-
-            <span class="text-[11px] text-gray-400 dark:text-gray-500">
-                1 item
-            </span>
-
-        </div>
-
-
-        <!-- PRODUTO -->
-        <div
-            class="
-                flex
-                gap-3
-                pb-4
-                border-b
-                border-gray-200
-                dark:border-[#242424]
-            "
-        >
-
-            <!-- ÍCONE DO PRODUTO -->
-            <div
-                class="
-                    w-12
-                    h-12
-                    flex
-                   -shrink-0
-                    items-center
-                    justify-center
-                    bg-gray-100
-                    dark:bg-[#1A1A1A]
-                    rounded-lg
-                "
-            >
-
-                <svg
-                    width="26"
-                    height="26"
-                    viewBox="0 0 26 26"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-
-                    <path
-                        d="M9 22.3333V5L25 1V18.3333M9 22.3333C9 23.8067 7.20933 25 5 25C2.79067 25 1 23.8067 1 22.3333C1 20.86 2.79067 19.6667 5 19.6667C7.20933 19.6667 9 20.86 9 22.3333ZM25 18.3333C25 19.8067 23.2093 21 21 21C18.7907 21 17 19.8067 17 18.3333C17 16.86 18.7907 15.6667 21 15.6667C23.2093 15.6667 25 16.86 25 18.3333ZM9 10.3333L25 6.33333"
-                        stroke="#A1A1AA"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    />
-
-                </svg>
-
-            </div>
-
-
-            <!-- INFORMAÇÕES -->
-            <div class="min-w-0">
-
-                <p
-                    id="produtoNome"
-                    class="
-                        font-semibold
-                        text-sm
-                        text-black
-                        dark:text-white
-                        truncate
-                    "
-                >
-                    Headphone Wireless ANC
-                </p>
-
-                <p
-                    id="produtoDescricao"
-                    class="
-                        text-[10px]
-                        text-gray-500
-                        dark:text-gray-400
-                        mt-0.5
-                    "
-                >
-                    Edição Minimalista • Matte Black
-                </p>
-
-                <p
-                    id="produtoPreco"
-                    class="
-                        font-bold
-                        text-sm
-                        mt-1
-                        text-black
-                        dark:text-white
-                    "
-                >
-                    R$ 289,00
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- CUPOM -->
-        <div class="flex gap-2 my-4">
-
-            <input
-                id="cupomInput"
-                type="text"
-                placeholder="CÓDIGO DE CUPOM"
-                class="
-                    flex-1
-                    min-w-0
-                    border
-                    border-[#E5E7EB]
-                    dark:border-[#2A2A2A]
-                    bg-white
-                    dark:bg-[#151515]
-                    text-black
-                    dark:text-white
-                    placeholder:text-gray-400
-                    rounded-lg
-                    px-3
-                    py-2
-                    text-[10px]
-                    outline-none
-                    focus:border-gray-400
-                    dark:focus:border-gray-500
-                "
-            >
-
-            <button
-                id="aplicarCupomBtn"
-                type="button"
-                class="
-                    shrink-0
-                    bg-gray-100
-                    dark:bg-[#1A1A1A]
-                    border
-                    border-[#E5E7EB]
-                    dark:border-[#2A2A2A]
-                    rounded-lg
-                    px-3
-                    text-[10px]
-                    text-black
-                    dark:text-white
-                    hover:bg-gray-200
-                    dark:hover:bg-[#242424]
-                "
-            >
-                Aplicar
-            </button>
-
-        </div>
-
-
-        <!-- VALORES -->
-        <div
-            id="resumoValores"
-            class="
-                space-y-3
-                text-[10px]
-                text-gray-500
-                dark:text-gray-400
-            "
-        >
-
-            <!-- SUBTOTAL -->
-            <div class="flex justify-between">
-
-                <span>
-                    Subtotal
-                </span>
-
-                <span
-                    id="subtotalValor"
-                    class="text-gray-700 dark:text-gray-300"
-                >
-                    R$ 289,00
-                </span>
-
-            </div>
-
-
-            <!-- FRETE -->
-            <div class="flex justify-between">
-
-                <span>
-                    Frete Sedex
-                </span>
-
-                <span
-                    id="freteValor"
-                    class="text-green-600 dark:text-green-400"
-                >
-                    Grátis
-                </span>
-
-            </div>
-
-
-            <!-- DESCONTO -->
-            <div class="flex justify-between">
-
-                <span id="descontoLabel">
-                    Desconto PIX (5% OFF)
-                </span>
-
-                <span
-                    id="descontoValor"
-                    class="text-green-600 dark:text-green-400"
-                >
-                    - R$ 14,45
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <!-- TOTAL -->
-        <div
-            class="
-                border-t
-                border-gray-200
-                dark:border-[#242424]
-                mt-5
-                pt-4
-                flex
-                justify-between
-                items-center
-            "
-        >
-
-            <div>
-
-                <p
-                    class="
-                        font-semibold
-                        text-sm
-                        text-black
-                        dark:text-white
-                    "
-                >
-                    Total
-                </p>
-
-                <p
-                    id="parcelamento"
-                    class="
-                        text-[9px]
-                        text-gray-400
-                        dark:text-gray-500
-                    "
-                >
-                    em até 3x de R$ 86,70 sem juros
-                </p>
-
-            </div>
-
-
-            <span
-                id="totalValor"
-                class="
-                    text-xl
-                    font-bold
-                    text-[#111827]
-                    dark:text-white
-                "
-            >
-                R$ 260,10
-            </span>
-
-        </div>
-
-
-        <!-- FINALIZAR PEDIDO -->
-        <button
-            id="checkoutBtn"
-            type="button"
-            class="
-                w-full
-                bg-[#111827]
-                dark:bg-white
-                text-white
-                dark:text-black
-                rounded-lg
-                py-3
-                mt-5
-                text-[10px]
-                font-semibold
-                flex
-                items-center
-                justify-center
-                gap-2
-                shadow-md
-                hover:opacity-90
-            "
-        >
-
-            <svg
-                width="12"
-                height="14"
-                viewBox="0 0 12 14"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-
-                <path
-                    d="M6.00008 8.66675V10.0001M2.00008 12.6667H10.0001C10.3537 12.6667 10.6928 12.5263 10.9429 12.2762C10.9429 12.0262 11.3334 11.687 11.3334 11.3334V7.33341C11.3334 6.97979 11.1929 6.64065 11.0573 6.39061C10.8072 6.14056 10.3537 6.00008 10.0001 6.00008H2.00008C1.64646 6.00008 1.30732 6.14056 1.05727 6.39061C0.807224 6.14056 0.666748 6.97979 0.666748 7.33341V11.3334C0.666748 11.687 0.807224 12.0262 1.05727 12.2762C1.30732 12.5263 1.64646 12.6667 2.00008 12.6667ZM8.66675 6.00008V3.33341C8.66675 2.62617 8.3858 1.94789 7.8857 1.4478C7.3856 0.9477 6.70733 0.666748 6.00008 0.666748C5.29284 0.666748 4.61456 0.9477 4.11446 1.4478C3.61437 1.94789 3.33341 2.62617 3.33341 3.33341V6.00008H8.66675Z"
-                    stroke="currentColor"
-                    stroke-width="1.33333"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                />
-
-            </svg>
-
-            <span id="checkoutText">
-                Finalizar Pedido • R$ 260,10
-            </span>
-
-        </button>
-
-
-        <!-- GARANTIAS -->
-        <div
-            class="
-                mt-4
-                space-y-2
-                text-[9px]
-                text-[#6B7280]
-                dark:text-gray-400
-            "
-        >
-
-            <div class="flex items-center gap-2">
-
-                <span class="text-green-400">
-                    ✓
-                </span>
-
-                <span>
-                    30 dias de garantia incondicional
-                </span>
-
-            </div>
-
-            <div class="flex items-center gap-2">
-
-                <span class="text-green-400">
-                    ✓
-                </span>
-
-                <span>
-                    Envio imediato com código de rastreio
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</aside>
-
+            </aside>
         </main>
 
-        <footer
-            class="bg-[#F3F4F6] dark:bg-[#090909] border-t border-gray-200 dark:border-[#242424] rounded-b-lg py-5">
-
-            <p class="text-center text-[9px] text-gray-400 dark:text-gray-500">
+        <footer class="bg-[#F3F4F6] dark:bg-[#090909] border-t border-gray-200 dark:border-[#242424] rounded-b-lg py-5 transition-colors">
+            <p class="text-center text-[9px] text-gray-400 dark:text-gray-500 transition-colors">
                 © 2026 Minimal Store Tecnologia Ltda. CNPJ 00.000.000/0001-00 • Todos os direitos reservados.
             </p>
-
         </footer>
-
     </div>
 
-    <script src="./js/script.js"></script>
+    <!-- O SEU CÓDIGO JAVASCRIPT AQUI PARA FUNCIONAR: -->
+    
 
+    
 </body>
-
 </html>
