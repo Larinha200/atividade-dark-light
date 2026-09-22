@@ -47,11 +47,21 @@
 
         </header>
 
-        <main id="main"
-            class="bg-[#F3F4F6] dark:bg-[#090909] w-full p-5 grid grid-cols-1 lg:grid-cols-[minmax(0,600px)_360px] gap-6">
-
+       <main
+    id="main"
+    class="
+        bg-[#F3F4F6] dark:bg-[#090909]
+        w-full
+        p-5
+        grid
+        grid-cols-[minmax(0,1fr)_360px]
+        gap-6
+        items-start
+    "
+>
             <!-- ESQUERDA -->
-            <div class="space-y-5">
+            <!-- COLUNA ESQUERDA -->
+             <div class="min-w-0 space-y-5">
 
                 <!-- Dados Pessoais -->
                 <div class="flex items-center gap-2 mb-4">
@@ -228,7 +238,9 @@
      FORMA DE PAGAMENTO
      ========================================================= -->
 
-<div class="flex items-center gap-2 mb-4">
+     
+
+<div class="flex  gap-2 mb-4">
 
     <div
         class="w-5 h-5 rounded-full
@@ -738,14 +750,31 @@
 
             <!-- COLUNA DIREITA -->
            <!-- RESUMO DA COMPRA -->
-<aside class="w-full lg:w-[360px] self-start">
+<!-- =========================================================
+     COLUNA DIREITA - RESUMO DA COMPRA
+     ========================================================= -->
+
+<aside
+    class="
+        w-full
+        lg:w-[360px]
+        lg:col-start-2
+        lg:row-start-1
+        self-start
+    "
+>
 
     <div
         id="resumoCompra"
-        class="bg-white dark:bg-[#111111]
-               rounded-xl
-               border border-gray-200 dark:border-[#242424]
-               p-4">
+        class="
+            w-full
+            bg-white dark:bg-[#111111]
+            rounded-xl
+            border border-gray-200 dark:border-[#242424]
+            p-4
+            shadow-sm
+        "
+    >
 
         <!-- TÍTULO -->
         <div class="flex justify-between items-center mb-5">
@@ -763,54 +792,90 @@
 
         <!-- PRODUTO -->
         <div
-            class="flex gap-3 pb-4
-                   border-b border-gray-200 dark:border-[#242424]">
+            class="
+                flex
+                gap-3
+                pb-4
+                border-b
+                border-gray-200
+                dark:border-[#242424]
+            "
+        >
 
-            <!-- ÍCONE -->
+            <!-- ÍCONE DO PRODUTO -->
             <div
-                class="w-12 h-12
-                       bg-gray-100 dark:bg-[#1A1A1A]
-                       rounded-lg
-                       flex items-center justify-center">
+                class="
+                    w-12
+                    h-12
+                    flex
+                   -shrink-0
+                    items-center
+                    justify-center
+                    bg-gray-100
+                    dark:bg-[#1A1A1A]
+                    rounded-lg
+                "
+            >
 
                 <svg
                     width="26"
                     height="26"
                     viewBox="0 0 26 26"
                     fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
+                    xmlns="http://www.w3.org/2000/svg"
+                >
 
                     <path
                         d="M9 22.3333V5L25 1V18.3333M9 22.3333C9 23.8067 7.20933 25 5 25C2.79067 25 1 23.8067 1 22.3333C1 20.86 2.79067 19.6667 5 19.6667C7.20933 19.6667 9 20.86 9 22.3333ZM25 18.3333C25 19.8067 23.2093 21 21 21C18.7907 21 17 19.8067 17 18.3333C17 16.86 18.7907 15.6667 21 15.6667C23.2093 15.6667 25 16.86 25 18.3333ZM9 10.3333L25 6.33333"
                         stroke="#A1A1AA"
                         stroke-width="2"
                         stroke-linecap="round"
-                        stroke-linejoin="round" />
+                        stroke-linejoin="round"
+                    />
 
                 </svg>
 
             </div>
 
 
-            <!-- INFORMAÇÕES DO PRODUTO -->
+            <!-- INFORMAÇÕES -->
             <div class="min-w-0">
 
                 <p
                     id="produtoNome"
-                    class="font-semibold text-sm text-black dark:text-white">
+                    class="
+                        font-semibold
+                        text-sm
+                        text-black
+                        dark:text-white
+                        truncate
+                    "
+                >
                     Headphone Wireless ANC
                 </p>
 
                 <p
                     id="produtoDescricao"
-                    class="text-[11px]
-                           text-gray-500 dark:text-gray-400">
+                    class="
+                        text-[10px]
+                        text-gray-500
+                        dark:text-gray-400
+                        mt-0.5
+                    "
+                >
                     Edição Minimalista • Matte Black
                 </p>
 
                 <p
                     id="produtoPreco"
-                    class="font-bold text-sm mt-1 text-black dark:text-white">
+                    class="
+                        font-bold
+                        text-sm
+                        mt-1
+                        text-black
+                        dark:text-white
+                    "
+                >
                     R$ 289,00
                 </p>
 
@@ -825,35 +890,48 @@
             <input
                 id="cupomInput"
                 type="text"
-                class="flex-1
-                       border border-[#E5E7EB] dark:border-[#2A2A2A]
-                       bg-white dark:bg-[#151515]
-                       text-black dark:text-white
-                       placeholder:text-gray-400
-                       dark:placeholder:text-gray-600
-                       rounded-lg
-                       p-2
-                       text-xs
-                       outline-none
-                       focus:border-gray-400
-                       dark:focus:border-gray-500"
-                placeholder="CÓDIGO DE CUPOM">
-
+                placeholder="CÓDIGO DE CUPOM"
+                class="
+                    flex-1
+                    min-w-0
+                    border
+                    border-[#E5E7EB]
+                    dark:border-[#2A2A2A]
+                    bg-white
+                    dark:bg-[#151515]
+                    text-black
+                    dark:text-white
+                    placeholder:text-gray-400
+                    rounded-lg
+                    px-3
+                    py-2
+                    text-[10px]
+                    outline-none
+                    focus:border-gray-400
+                    dark:focus:border-gray-500
+                "
+            >
 
             <button
                 id="aplicarCupomBtn"
                 type="button"
-                class="bg-gray-100 dark:bg-[#1A1A1A]
-                       border border-[#E5E7EB] dark:border-[#2A2A2A]
-                       rounded-lg
-                       px-3
-                       text-xs
-                       text-black dark:text-white
-                       hover:bg-gray-200
-                       dark:hover:bg-[#242424]">
-
+                class="
+                    shrink-0
+                    bg-gray-100
+                    dark:bg-[#1A1A1A]
+                    border
+                    border-[#E5E7EB]
+                    dark:border-[#2A2A2A]
+                    rounded-lg
+                    px-3
+                    text-[10px]
+                    text-black
+                    dark:text-white
+                    hover:bg-gray-200
+                    dark:hover:bg-[#242424]
+                "
+            >
                 Aplicar
-
             </button>
 
         </div>
@@ -862,8 +940,13 @@
         <!-- VALORES -->
         <div
             id="resumoValores"
-            class="space-y-3 text-xs
-                   text-gray-600 dark:text-gray-400">
+            class="
+                space-y-3
+                text-[10px]
+                text-gray-500
+                dark:text-gray-400
+            "
+        >
 
             <!-- SUBTOTAL -->
             <div class="flex justify-between">
@@ -874,7 +957,8 @@
 
                 <span
                     id="subtotalValor"
-                    class="text-gray-700 dark:text-gray-300">
+                    class="text-gray-700 dark:text-gray-300"
+                >
                     R$ 289,00
                 </span>
 
@@ -890,7 +974,8 @@
 
                 <span
                     id="freteValor"
-                    class="text-green-600 dark:text-green-400">
+                    class="text-green-600 dark:text-green-400"
+                >
                     Grátis
                 </span>
 
@@ -906,7 +991,8 @@
 
                 <span
                     id="descontoValor"
-                    class="text-green-600 dark:text-green-400">
+                    class="text-green-600 dark:text-green-400"
+                >
                     - R$ 14,45
                 </span>
 
@@ -917,26 +1003,39 @@
 
         <!-- TOTAL -->
         <div
-            class="border-t
-                   border-gray-200 dark:border-[#242424]
-                   mt-5
-                   pt-4
-                   flex
-                   justify-between
-                   items-center">
+            class="
+                border-t
+                border-gray-200
+                dark:border-[#242424]
+                mt-5
+                pt-4
+                flex
+                justify-between
+                items-center
+            "
+        >
 
             <div>
 
                 <p
-                    class="font-semibold text-sm
-                           text-black dark:text-white">
+                    class="
+                        font-semibold
+                        text-sm
+                        text-black
+                        dark:text-white
+                    "
+                >
                     Total
                 </p>
 
                 <p
                     id="parcelamento"
-                    class="text-[10px]
-                           text-gray-400 dark:text-gray-500">
+                    class="
+                        text-[9px]
+                        text-gray-400
+                        dark:text-gray-500
+                    "
+                >
                     em até 3x de R$ 86,70 sem juros
                 </p>
 
@@ -945,50 +1044,60 @@
 
             <span
                 id="totalValor"
-                class="text-2xl
-                       font-bold
-                       text-[#111827] dark:text-white">
+                class="
+                    text-xl
+                    font-bold
+                    text-[#111827]
+                    dark:text-white
+                "
+            >
                 R$ 260,10
             </span>
 
         </div>
 
 
-        <!-- BOTÃO FINALIZAR -->
+        <!-- FINALIZAR PEDIDO -->
         <button
             id="checkoutBtn"
             type="button"
-            class="w-full
-                   bg-[#111827] dark:bg-white
-                   text-white dark:text-black
-                   rounded-lg
-                   py-3
-                   mt-5
-                   text-[11px]
-                   font-semibold
-                   flex
-                   items-center
-                   justify-center
-                   gap-2
-                   shadow-md
-                   hover:opacity-90">
+            class="
+                w-full
+                bg-[#111827]
+                dark:bg-white
+                text-white
+                dark:text-black
+                rounded-lg
+                py-3
+                mt-5
+                text-[10px]
+                font-semibold
+                flex
+                items-center
+                justify-center
+                gap-2
+                shadow-md
+                hover:opacity-90
+            "
+        >
 
             <svg
                 width="12"
                 height="14"
                 viewBox="0 0 12 14"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg">
+                xmlns="http://www.w3.org/2000/svg"
+            >
 
                 <path
-                    d="M6.00008 8.66675V10.0001M2.00008 12.6667H10.0001C10.3537 12.6667 10.6928 12.5263 10.9429 12.2762C10.9429 12.0262 11.3334 11.687 11.3334 11.3334V7.33341C11.3334 6.97979 11.1929 6.64065 10.9429 6.39061C10.6928 6.14056 10.3537 6.00008 10.0001 6.00008H2.00008C1.64646 6.00008 1.30732 6.14056 1.05727 6.39061C0.807224 6.14056 0.666748 6.97979 0.666748 7.33341V11.3334C0.666748 11.687 0.807224 12.0262 1.05727 12.2762C1.30732 12.5263 1.64646 12.6667 2.00008 12.6667ZM8.66675 6.00008V3.33341C8.66675 2.62617 8.3858 1.94789 7.8857 1.4478C7.3856 0.9477 6.70733 0.666748 6.00008 0.666748C5.29284 0.666748 4.61456 0.9477 4.11446 1.4478C3.61437 1.94789 3.33341 2.62617 3.33341 3.33341V6.00008H8.66675Z"
+                    d="M6.00008 8.66675V10.0001M2.00008 12.6667H10.0001C10.3537 12.6667 10.6928 12.5263 10.9429 12.2762C10.9429 12.0262 11.3334 11.687 11.3334 11.3334V7.33341C11.3334 6.97979 11.1929 6.64065 11.0573 6.39061C10.8072 6.14056 10.3537 6.00008 10.0001 6.00008H2.00008C1.64646 6.00008 1.30732 6.14056 1.05727 6.39061C0.807224 6.14056 0.666748 6.97979 0.666748 7.33341V11.3334C0.666748 11.687 0.807224 12.0262 1.05727 12.2762C1.30732 12.5263 1.64646 12.6667 2.00008 12.6667ZM8.66675 6.00008V3.33341C8.66675 2.62617 8.3858 1.94789 7.8857 1.4478C7.3856 0.9477 6.70733 0.666748 6.00008 0.666748C5.29284 0.666748 4.61456 0.9477 4.11446 1.4478C3.61437 1.94789 3.33341 2.62617 3.33341 3.33341V6.00008H8.66675Z"
                     stroke="currentColor"
                     stroke-width="1.33333"
                     stroke-linecap="round"
-                    stroke-linejoin="round" />
+                    stroke-linejoin="round"
+                />
 
             </svg>
-
 
             <span id="checkoutText">
                 Finalizar Pedido • R$ 260,10
@@ -999,30 +1108,20 @@
 
         <!-- GARANTIAS -->
         <div
-            class="mt-4
-                   space-y-2
-                   text-[10px]
-                   text-[#6B7280]
-                   dark:text-gray-400">
+            class="
+                mt-4
+                space-y-2
+                text-[9px]
+                text-[#6B7280]
+                dark:text-gray-400
+            "
+        >
 
-            <!-- GARANTIA -->
             <div class="flex items-center gap-2">
 
-                <svg
-                    width="10"
-                    height="7"
-                    viewBox="0 0 10 7"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-
-                    <path
-                        d="M0.583374 4.08325L2.91671 6.41659L8.75004 0.583252"
-                        stroke="#34D399"
-                        stroke-width="1.16667"
-                        stroke-linecap="round"
-                        stroke-linejoin="round" />
-
-                </svg>
+                <span class="text-green-400">
+                    ✓
+                </span>
 
                 <span>
                     30 dias de garantia incondicional
@@ -1030,25 +1129,11 @@
 
             </div>
 
-
-            <!-- ENVIO -->
             <div class="flex items-center gap-2">
 
-                <svg
-                    width="10"
-                    height="7"
-                    viewBox="0 0 10 7"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-
-                    <path
-                        d="M0.583374 4.08325L2.91671 6.41659L8.75004 0.583252"
-                        stroke="#34D399"
-                        stroke-width="1.16667"
-                        stroke-linecap="round"
-                        stroke-linejoin="round" />
-
-                </svg>
+                <span class="text-green-400">
+                    ✓
+                </span>
 
                 <span>
                     Envio imediato com código de rastreio
